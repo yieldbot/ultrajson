@@ -421,9 +421,14 @@ int Buffer_EscapeStringValidated (JSOBJ obj, JSONObjectEncoder *enc, const char 
       case 18:
       case 20:
       case 22:
-      case 24:
       {
         *(of++) = *( (char *) (g_escapeChars + utflen + 0));
+        *(of++) = *( (char *) (g_escapeChars + utflen + 1));
+        io ++;
+        continue;
+      }
+      case 24:
+      {
         *(of++) = *( (char *) (g_escapeChars + utflen + 1));
         io ++;
         continue;
