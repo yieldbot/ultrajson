@@ -735,7 +735,7 @@ class UltraJSONTests(TestCase):
             assert False, "expected TypeError"
 
     def test_version(self):
-        assert re.match(r'^\d+\.\d+(\.\d+)?$', ujson.__version__), \
+        assert re.match(r'^\S+$', ujson.__version__), \
                "ujson.__version__ must be a string like '1.4.0'"
 
     def test_encodeNumericOverflow(self):
